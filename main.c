@@ -15,6 +15,7 @@ int key = ftok("control.c", 'R');
 int sem = semget(key, 1, 0);
 int shm = shmget(key, 1000, 0);
 
+printf("Checking if resources are available...");
 struct sembuf o;
 o.sem_op = -1;
 o.sem_num = 0;
@@ -29,6 +30,7 @@ scanf("%s", newline);
 strcpy(line, newline);
 shmdt(line);
 
+printf("Writing to story...");
 write(fd, newline, strlen(newline));
 close(fd);
 o.sem_op=1;
