@@ -58,18 +58,19 @@ int delete(){
 
 }
 
-int main(int c, char * ans[]){
-  if(c ==1){
+int main(){
+ 
   printf("Enter command\n");
-  exit(1);}
+  char * ans = malloc(5);
+  scanf("%s",ans);
 
-  if(strcmp(ans[1],"-c")==0){
+  if(strcmp(ans,"-c")==0){
     create();
   }
-  else if(strcmp(ans[1],"-r")==0){
+  else if(strcmp(ans,"-r")==0){
       delete();
     }
-  else if(strcmp(ans[1],"-v")==0){
+  else if(strcmp(ans,"-v")==0){
         view();
     }
 
